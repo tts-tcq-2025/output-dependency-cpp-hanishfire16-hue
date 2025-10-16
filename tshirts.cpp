@@ -18,5 +18,8 @@ void testTshirtSize() {
     assert(size(37) == 'S');
     assert(size(40) == 'M');
     assert(size(43) == 'L');
+    // Strengthen: test the missing boundaries
+    assert(size(38) == 'S'); // Should fail (returns '\0')
+    assert(size(42) == 'L'); // Should fail (returns '\0')
     std::cout << "All is well (maybe!)\n";
 }
